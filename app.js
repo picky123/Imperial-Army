@@ -15,13 +15,13 @@ client.on('message', msg => {
 client.login('NDM2ODQ1NzgzNDEzODE3MzU1.Dbte1g.n8klczqLjyL_89aRzTCdgSuE-sU');
 
 client.on('message', message => {
-  if (message.content === '-avatar') {
+  if (message.content === '.avatar') {
     message.reply(message.author.avatarURL);
   }
 });
 
 client.on('message', message => {
-if (message.content.toLowerCase().startsWith('-ban')) {
+if (message.content.toLowerCase().startsWith('.ban')) {
     let member = message.mentions.members.first();
     let reason = message.content.split(' ').slice(2).join(' ');
   if(!message.guild.member(message.author).hasPermission('BAN_MEMBERS')) return message.channel.send("` Nu ai acces la aceasta comanda! :negative_squared_cross_mark:  `");
@@ -35,7 +35,7 @@ if (message.content.toLowerCase().startsWith('-ban')) {
 })
 
 client.on('message', message => {
-if (message.content === '-serverinfo') {
+if (message.content === '.serverinfo') {
     Promise.all([
         message.react('ðŸ˜Ž'),
         message.react('ðŸ¤‘'),
@@ -59,7 +59,7 @@ if (message.content === '-serverinfo') {
 })
 
 client.on('message', message => {
-   if(message.content.startsWith('-mass')) {
+   if(message.content.startsWith('.mass')) {
    if(message.author.id === "437327175973208075" ||
 message.author.id === "437327175973208075"){
       let args = message.content.split(" ").slice(1);
@@ -73,7 +73,7 @@ member.send(reason)
 message.delete() }})}}} });
 
 client.on('message', message => {
-if (message.content.toLowerCase().startsWith('-kick')) {
+if (message.content.toLowerCase().startsWith('.kick')) {
     let member = message.mentions.members.first();
     let reason = message.content.split(' ').slice(2).join(' ');
   if(!message.guild.member(message.author).hasPermission('KICK_MEMBERS')) return message.reply("**Scuze, dar nu ai acces la aceasta comanda.!**");
@@ -87,17 +87,12 @@ if (message.content.toLowerCase().startsWith('-kick')) {
 })
 
 client.on('ready', () => {
-  client.user.setGame('Imperial - Army | -help', 'https://www.twitch.tv/streamerhouse')
+  client.user.setGame('Imperial - Army | .help', 'https://www.twitch.tv/streamerhouse')
 })
 
-client.on('message', message => {
-  if (message.content === '-avatar') {
-    message.reply(message.author.avatarURL);
+client.on('message', msg => {
+  if (msg.content === '.help') {
+    msg.channel.send('***Comenzi :tools: ***  \n\ ** :pick: .ban \n\ ```.ban [@user] [motiv] pentru a bana pe cineva``` \n\ :pick: -avatar \n\ ```-avatar pentru vizionara avatarului``` \n\ :pick: .kick \n\ ```.kick [@user] [motiv] pentru a dat kick cuiva``` \n\ :pick: .serverinfo \n\ -serverinfo ```pentru a vedea informatile server-ului``` ** ');
   }
 });
 
-client.on('message', msg => {
-  if (msg.content === '-help') {
-    msg.channel.send('``Ø Comenzi Ø`` , \n\ ***-ban - Banezi un membru \n\ -kick - Dai afara un membru \n\ -serverinfo - Arata datele despre server \n\ avatar - Arata avatarul tau! ***');
-  }
-});
