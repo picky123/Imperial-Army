@@ -92,7 +92,7 @@ client.on('ready', () => {
 
 client.on('message', msg => {
   if (msg.content === '.help') {
-    msg.channel.send('***Comenzi :tools: ***  \n\ ** :pick: .ban \n\ ```.ban [@user] [motiv] pentru a bana pe cineva``` \n\ :pick: -avatar \n\ ```-avatar pentru vizionara avatarului``` \n\ :pick: .kick \n\ ```.kick [@user] [motiv] pentru a dat kick cuiva``` \n\ :pick: .serverinfo \n\ ```pentru a vedea informatile server-ului``` ** ');
+    msg.channel.send('***Comenzi :tools:*** ,  \n\ ** :pick: .ban \n\ ```.ban [@user] [motiv] pentru a bana pe cineva``` \n\ :pick: -avatar \n\ ```-avatar pentru vizionara avatarului``` \n\ :pick: .kick \n\ ```.kick [@user] [motiv] pentru a dat kick cuiva``` \n\ :pick: .serverinfo \n\ ```pentru a vedea informatile server-ului``` ** ');
   }
 });
 
